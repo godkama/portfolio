@@ -11,7 +11,6 @@ export default function PortfolioPanel({ onClose }) {
       desc: "The current portfolio you are using. Built with React and inspired by the osu!lazer interface.",
       links: [
         { label: "GITHUB 🔗", url: "https://github.com/godkama/portfolio" },
-        { label: "DEMO 🔗", url: "https://portfolio.example.com" },
         { label: "JS" },
         { label: "React" },
       ],
