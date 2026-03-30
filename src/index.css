@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Aller";
+  src: url("./assets/fonts/Aller/Aller_Std_Lt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aller";
+  src: url("./assets/fonts/Aller/Aller_Std_LtIt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Aller";
+  src: url("./assets/fonts/Aller/Aller_Std_Rg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aller";
+  src: url("./assets/fonts/Aller/Aller_Std_It.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aller";
+  src: url("./assets/fonts/Aller/Aller_Std_Bd.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aller";
+  src: url("./assets/fonts/Aller/Aller_Std_BdIt.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Aller Display";
+  src: url("./assets/fonts/Aller/AllerDisplay_Std_Rg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Aller", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+.display-text {
+  font-family: "Aller Display", sans-serif;
+}
+.menu-btn {
+  /* This ensures the shadow transition is also smooth */
+  transition:
+    transform 0.1s ease-out,
+    filter 0.1s,
+    box-shadow 0.1s !important;
+}
+
+.menu-btn:hover {
+  filter: brightness(1.2) !important;
+  transform: translateX(3vw) skewX(-15deg) scale(1.05) !important;
+
+  z-index: 50 !important;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(179, 161, 255, 0.3);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.portfolio-item {
+  transition:
+    transform 0.15s ease-out,
+    width 0.2s ease-out,
+    filter 0.2s !important;
+  will-change: transform, width;
+}
+
+.portfolio-item:hover {
+  filter: brightness(1.4) !important;
+  transform: skewX(-15deg) scale(calc(var(--base-scale) + 0.05))
+    translateX(-1vw) !important;
+  z-index: 100 !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.back-btn:hover {
+  filter: brightness(1.2);
+  transform: skewX(-15deg) scale(1.05);
+}
+.project-link-btn:hover {
+  background-color: #ff66aa !important;
+  border-color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 0.5vw 1.5vw rgba(255, 102, 170, 0.4);
+}
