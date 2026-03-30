@@ -1,7 +1,6 @@
-export default function Menu({ open }) {
+export default function Menu({ open, setShowPortfolio }) {
   const menuItems = ["PORTFOLIO", "GITHUB", "REPO", "INFO"];
 
-  // Mapping links to the labels
   const links = {
     GITHUB: "https://github.com/godkama",
     REPO: "https://github.com/godkama/portfolio",
@@ -9,6 +8,14 @@ export default function Menu({ open }) {
 
   const getWidth = (i) => ["35vw", "32vw", "29vw", "26vw"][i];
   const getIcon = (item) => ({})[item];
+
+  const handleBtnClick = (item) => {
+    if (item === "PORTFOLIO") {
+      setShowPortfolio(true);
+    } else if (links[item]) {
+      window.open(links[item], "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <div
@@ -33,15 +40,12 @@ export default function Menu({ open }) {
           <div
             key={item}
             className="menu-btn"
-            // Opens link in new tab if it exists in the links object
-            onClick={() =>
-              links[item] &&
-              window.open(links[item], "_blank", "noopener,noreferrer")
-            }
+            onClick={() => handleBtnClick(item)}
             style={{
               height: "7vw",
               width: getWidth(index),
               background: "linear-gradient(90deg, #8662d0 0%, #4d3a91 100%)",
+
               borderLeft: "0.5vw solid #b3a1ff",
               display: "flex",
               alignItems: "center",

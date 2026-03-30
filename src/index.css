@@ -68,14 +68,46 @@ h1,
 
 .menu-btn:hover {
   filter: brightness(1.2) !important;
-  /* We manually include the skew so it doesn't snap back to straight */
   transform: translateX(3vw) skewX(-15deg) scale(1.05) !important;
 
-  /* Bring to front so shadow isn't covered by other buttons */
   z-index: 50 !important;
 
-  /* A nice pinkish glow shadow to match the theme */
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.5),
     0 0 15px rgba(179, 161, 255, 0.3);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.portfolio-item {
+  transition:
+    transform 0.15s ease-out,
+    width 0.2s ease-out,
+    filter 0.2s !important;
+  will-change: transform, width;
+}
+
+.portfolio-item:hover {
+  filter: brightness(1.4) !important;
+  transform: skewX(-15deg) scale(calc(var(--base-scale) + 0.05))
+    translateX(-1vw) !important;
+  z-index: 100 !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.back-btn:hover {
+  filter: brightness(1.2);
+  transform: skewX(-15deg) scale(1.05);
 }
