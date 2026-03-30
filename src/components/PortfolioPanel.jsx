@@ -74,7 +74,7 @@ export default function PortfolioPanel({ onClose }) {
     },
   ];
 
-  const loopProjects = [...projects, ...projects, ...projects, ...projects];
+  const loopProjects = [...projects, ...projects, ...projects];
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -107,7 +107,7 @@ export default function PortfolioPanel({ onClose }) {
               <h2 style={styles.infoTitle}>{selectedProject.title}</h2>
               <p style={styles.infoDesc}>{selectedProject.desc}</p>
 
-              {/* --- New Links Section --- */}
+              {}
               {selectedProject.links && (
                 <div style={styles.linkContainer}>
                   {selectedProject.links.map((link, idx) => (
@@ -126,7 +126,14 @@ export default function PortfolioPanel({ onClose }) {
               )}
             </div>
           ) : (
-            <p style={{ opacity: 0.5 }}>SELECT A PROJECT...</p>
+            <div style={styles.instructionBox}>
+              <p style={styles.instructionText}>
+                <span style={{ color: "#ff66aa", fontWeight: 900 }}>CLICK</span>{" "}
+                A PANEL ON THE RIGHT
+                <br />
+                TO VIEW PROJECT DETAILS
+              </p>
+            </div>
           )}
         </div>
 
@@ -219,6 +226,18 @@ const styles = {
     justifyContent: "space-between",
     backgroundColor: "black",
     zIndex: 20,
+  },
+  instructionBox: {
+    borderLeft: "4px solid rgba(255, 102, 170, 0.4)",
+    paddingLeft: "1.5vw",
+    marginTop: "2vw",
+  },
+  instructionText: {
+    fontSize: "1.2vw",
+    color: "white",
+    opacity: 0.6,
+    lineHeight: "1.8",
+    letterSpacing: "0.05vw",
   },
   linkContainer: {
     display: "flex",
