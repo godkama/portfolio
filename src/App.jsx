@@ -10,10 +10,16 @@ export default function App() {
       style={{
         width: "100vw",
         height: "100vh",
+        position: "relative",
+        overflow: "hidden",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
+        // --- BACKGROUND IMAGE SETUP ---
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/src/assets/textures/osu-main-menu.jpg')`,
+        backgroundSize: "100%",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Circle open={open} setOpen={setOpen} />
