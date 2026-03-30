@@ -1,5 +1,5 @@
 export default function Menu({ open }) {
-  const menuItems = ["PORTFOLIO", "GITHUB", "REPO"];
+  const menuItems = ["PORTFOLIO", "GITHUB", "REPO", "INFO"];
 
   // Mapping links to the labels
   const links = {
@@ -7,9 +7,8 @@ export default function Menu({ open }) {
     REPO: "https://github.com/godkama/portfolio",
   };
 
-  const getWidth = (i) => ["35vw", "32vw", "29vw"][i];
-  const getIcon = (item) =>
-    ({ PORTFOLIO: "🔘", GITHUB: "👥", REPO: "⚙️" })[item];
+  const getWidth = (i) => ["35vw", "32vw", "29vw", "26vw"][i];
+  const getIcon = (item) => ({})[item];
 
   return (
     <div
