@@ -1,4 +1,4 @@
-import bgTexture from "./assets/textures/osu!triangles-tile-light.png";
+import bgTexture from "../assets/textures/osu!triangles-tile-light.png";
 
 export default function Circle({ open, setOpen }) {
   return (
