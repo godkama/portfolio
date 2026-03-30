@@ -1,14 +1,14 @@
 export default function Menu({ open }) {
-  const menuItems = ["SOLO", "MULTI", "OPTIONS", "EXIT"];
-  const getWidth = (i) => ["460px", "540px", "540px", "460px"][i];
+  const menuItems = ["PORTFOLIO", "GITHUB", "REPO"];
+  const getWidth = (i) => ["540px", "500px", "460px"][i];
   const getIcon = (item) =>
-    ({ SOLO: "🔘", MULTI: "👥", OPTIONS: "⚙️", EXIT: "🚪" })[item];
+    ({ PORTFOLIO: "🔘", GITHUB: "👥", REPO: "⚙️" })[item];
   return (
     <div
       style={{
         position: "absolute",
         left: "50%",
-        marginLeft: "-180px",
+        marginLeft: "-7vw",
         display: "flex",
         flexDirection: "column",
         gap: "0px",
@@ -58,7 +58,7 @@ export default function Menu({ open }) {
                 transform: "skewX(15deg)",
                 fontSize: "40px",
                 fontWeight: 700,
-                fontStyle: "italic",
+                fontStyle: "normal",
               }}
             >
               {item}
