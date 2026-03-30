@@ -62,7 +62,8 @@ export default function App() {
                 />
                 <p style={styles.infoText}>
                   This portfolio is inspired by the <strong>osu!</strong>{" "}
-                  interface. It also has a mobile only view. Please look at the GitHub for any additional info.
+                  interface. It also has a mobile only view. Please look at the
+                  GitHub for any additional info.
                   <br />
                   Developed by <strong>godkama</strong>.
                 </p>
@@ -84,7 +85,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/textures/osu-main-menu.jpg')`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/textures/osu-main-menu.jpg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
