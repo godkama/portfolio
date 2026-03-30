@@ -1,3 +1,5 @@
+import bgTexture from "./assets/textures/os!triangles-tile-light.png";
+
 export default function Circle({ open, setOpen }) {
   return (
     <div
@@ -14,7 +16,7 @@ export default function Circle({ open, setOpen }) {
         border: "2vw solid white",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url('src/assets/textures/osu!triangles-tile-light.png')`,
+        backgroundImage: `url(${bgTexture})`,
         backgroundSize: "35vw",
         backgroundBlendMode: "multiply",
         fontSize: "10vw",
