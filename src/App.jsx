@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Circle from "./components/Circle";
 import Menu from "./components/Menu";
 import PortfolioPanel from "./components/PortfolioPanel";
+import bgTexture from "./assets/textures/osu-main-menu.jpg";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -85,7 +86,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('src/assets/textures/osu-main-menu.jpg')`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bgTexture})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
