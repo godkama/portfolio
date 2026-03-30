@@ -111,3 +111,9 @@ h1,
   filter: brightness(1.2);
   transform: skewX(-15deg) scale(1.05);
 }
+.project-link-btn:hover {
+  background-color: #ff66aa !important;
+  border-color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 0.5vw 1.5vw rgba(255, 102, 170, 0.4);
+}
