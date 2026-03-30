@@ -85,7 +85,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/textures/osu-main-menu.jpg')`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('src/assets/textures/osu-main-menu.jpg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
