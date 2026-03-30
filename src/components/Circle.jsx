@@ -17,7 +17,7 @@ export default function Circle({ open, setOpen }) {
         backgroundImage: `url('/src/assets/textures/osu!triangles-tile-light.png')`,
         backgroundSize: "35vw",
         backgroundBlendMode: "multiply",
-        fontSize: "13vw",
+        fontSize: "10vw",
         fontWeight: 700,
         fontStyle: "default",
         color: "white",
@@ -30,7 +30,7 @@ export default function Circle({ open, setOpen }) {
         boxShadow: open ? "0 0 60px #ff66aa" : "0 0 30px rgba(0,0,0,0.5)",
       }}
     >
-      osu!
+      kama!
     </div>
   );
 }
