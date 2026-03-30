@@ -14,7 +14,7 @@ export default function Circle({ open, setOpen }) {
         border: "2vw solid white",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url('/src/assets/textures/osu!triangles-tile-light.png')`,
+        backgroundImage: `url('/assets/textures/osu!triangles-tile-light.png')`,
         backgroundSize: "35vw",
         backgroundBlendMode: "multiply",
         fontSize: "10vw",
