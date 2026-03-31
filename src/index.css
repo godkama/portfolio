@@ -117,3 +117,25 @@ h1,
   transform: translateY(-3px);
   box-shadow: 0 0.5vw 1.5vw rgba(255, 102, 170, 0.4);
 }
+
+@keyframes container-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pulsing {
+  animation: container-pulse 0.8s infinite ease-in-out;
+}

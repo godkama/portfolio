@@ -7,13 +7,26 @@ import bgTexture from "./assets/textures/osu-main-menu.jpg";
 export default function App() {
   const [open, setOpen] = useState(false);
   const [showPortfolio, setShowPortfolio] = useState(false);
-  const [showInfo, setShowInfo] = useState(false); // New State
+  const [showInfo, setShowInfo] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 1024);
+
+    const handleMouseMove = (e) => {
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+      setCoords({ x, y });
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   if (!isDesktop) {
@@ -28,21 +41,26 @@ export default function App() {
     );
   }
 
+  const parallaxStyle = {
+    transform: `translate(${coords.x * -20}px, ${coords.y * -20}px) scale(1.05)`,
+  };
+
   return (
     <div style={styles.container}>
+      <div style={{ ...styles.backgroundLayer, ...parallaxStyle }} />
+
       {showPortfolio ? (
         <PortfolioPanel onClose={() => setShowPortfolio(false)} />
       ) : (
         <>
           <Circle open={open} setOpen={setOpen} />
-          {}
+
           <Menu
             open={open}
             setShowPortfolio={setShowPortfolio}
             setShowInfo={setShowInfo}
           />
 
-          {}
           {showInfo && (
             <div style={styles.infoOverlay} onClick={() => setShowInfo(false)}>
               <div style={styles.infoBox} onClick={(e) => e.stopPropagation()}>
@@ -86,9 +104,20 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "black",
+  },
+  backgroundLayer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bgTexture})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    zIndex: 0,
+    transition: "transform 0.1s ease-out",
+    pointerEvents: "none",
   },
   mobileWarning: {
     width: "100vw",
@@ -132,7 +161,7 @@ const styles = {
     color: "#ff66aa",
     fontSize: "2vw",
     cursor: "pointer",
-    transform: "skewX(10deg)", // Counter-skew
+    transform: "skewX(10deg)",
   },
   infoTitle: {
     fontSize: "2.2vw",
